@@ -3,7 +3,7 @@ package com.capgemini;
 import java.util.regex.*;
 import java.util.*;
 
-//User registration passsword length check
+//User registration passsword check - atleast one upper case
 public class UserRegGradle {
 
 	public static Scanner sc;
@@ -11,7 +11,7 @@ public class UserRegGradle {
 
 	public void PassCheck(String pass) {
 
-		Pattern p = Pattern.compile("[\\S]{8,}");
+		Pattern p = Pattern.compile("(?=.*[A-Z])[A-Za-z0-9]{8,}$");
 		Matcher m = p.matcher(pass);
 		boolean flag = true;
 		while (flag) {
