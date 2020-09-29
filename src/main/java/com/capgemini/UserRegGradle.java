@@ -3,7 +3,7 @@ package com.capgemini;
 import java.util.regex.*;
 import java.util.*;
 
-//User registration passsword check - atleast one numeric character
+//User registration passsword check - exactly one special character.
 public class UserRegGradle {
 
 	public static Scanner sc;
@@ -11,7 +11,7 @@ public class UserRegGradle {
 
 	public void PassCheck(String pass) {
 
-		Pattern p = Pattern.compile("(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$");
+		Pattern p = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$");
 		Matcher m = p.matcher(pass);
 		boolean flag = true;
 		while (flag) {
@@ -35,3 +35,4 @@ public class UserRegGradle {
 
 	}
 }
+
