@@ -3,26 +3,25 @@ package com.capgemini;
 import java.util.regex.*;
 import java.util.*;
 
-//User registration mobile no. check.
+//User registration passsword length check
 public class UserRegGradle {
 
 	public static Scanner sc;
-	public static String mobile;
+	public static String pass;
 
-	public void MobileCheck(String mobile) {
+	public void PassCheck(String pass) {
 
-		Pattern p = Pattern.compile("[0-9]{2}[\\s][7-9][0-9]{9}");
-		Matcher m = p.matcher(mobile);
+		Pattern p = Pattern.compile("[\\S]{8,}");
+		Matcher m = p.matcher(pass);
 		boolean flag = true;
 		while (flag) {
 			if (m.matches()) {
-				System.out.println("Entered mobile no. is valid!!");
+				System.out.println("Entered password is valid!!");
 				flag = false;
 				break;
 			} else {
-				System.out.println("Entered mobile no. is invalid!! Re-enter mobile no.:");
-				mobile = sc.nextLine();
-				flag = true;
+				System.out.println("Entered password is invalid!! ");
+				break;
 			}
 		}
 	}
@@ -30,9 +29,9 @@ public class UserRegGradle {
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
 		UserRegGradle user = new UserRegGradle();
-		System.out.println("Enter mobile no:");
-		mobile = sc.nextLine();
-		user.MobileCheck(mobile);
+		System.out.println("Enter password :");
+		pass = sc.nextLine();
+		user.PassCheck(pass);
 
 	}
 }
