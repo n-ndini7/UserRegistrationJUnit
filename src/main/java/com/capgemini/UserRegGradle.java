@@ -3,24 +3,24 @@ package com.capgemini;
 import java.util.regex.*;
 import java.util.*;
 
-//User registration first name check
+//User registration last  name check
 public class UserRegGradle {
 
 	public static Scanner sc;
-	public static String fname;
+	public static String lname;
 
 	public void FnameCheck(String fname) {
 
 		Pattern p = Pattern.compile("^[A-Z][a-zA-Z]{2,}");
-		Matcher m = p.matcher(fname);
+		Matcher m = p.matcher(lname);
 		boolean flag = true;
 		while (flag) {
 			if (m.matches()) {
-				System.out.println("Entered First name is valid!!");
+				System.out.println("Entered last name is valid!!");
 				flag = false;
 				break;
 			} else {
-				System.out.println("Entered first name is invalid!! ");
+				System.out.println("Entered last name is invalid!! ");
 				break;
 			}
 		}
@@ -28,10 +28,10 @@ public class UserRegGradle {
 
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
-		UserRegGradleuser = new UserRegGradle();
-		System.out.println("Enter First name:");
-		fname = sc.nextLine();
-		user.FnameCheck(fname);
+		UserRegGradle user = new UserRegGradle();
+		System.out.println("Enter Last name:");
+		lname = sc.nextLine();
+		user.FnameCheck(lname);
 
 	}
 }
