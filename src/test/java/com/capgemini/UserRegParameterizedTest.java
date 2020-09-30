@@ -48,7 +48,7 @@ public class UserRegParameterizedTest {
 			boolean flag = user.EmailCheck(this.email);
 			Assert.assertEquals(this.expectedResult,flag);
 		}catch(UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Email ID!! please re-try!", e.getMessage());
 		}
 			}
 

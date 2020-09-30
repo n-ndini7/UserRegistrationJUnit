@@ -12,7 +12,7 @@ public class UserRegGradle {
 		Matcher m = p.matcher(firstName);
 		boolean flag = m.matches();
 		if(!flag) 
-			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			throw new UserRegistrationException ("Invalid entry of first name !! please re-try!");
 			return flag;
 	}
 
@@ -22,7 +22,7 @@ public class UserRegGradle {
 		//return (lastName.matches(namePattern));
 		boolean flag = m.matches();
 		if(!flag) 
-			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			throw new UserRegistrationException ("Invalid entry of last name!! please re-try!");
 			return flag;
 	}
 
@@ -32,7 +32,7 @@ public class UserRegGradle {
 	//eturn (email.matches(emailPattern));
 		boolean flag = m.matches();
 		if(!flag) 
-			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			throw new UserRegistrationException ("Invalid entry of Email ID!! please re-try!");
 			return flag;
 	}
 
@@ -41,7 +41,7 @@ public class UserRegGradle {
 		Matcher m = p.matcher(mobile);
 		boolean flag = m.matches();
 		if(!flag) 
-			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			throw new UserRegistrationException ("Invalid entry of mobile no.!! please re-try!");
 			return flag;
 	}
 
@@ -50,7 +50,7 @@ public class UserRegGradle {
 		Matcher m = p.matcher(pass);
 		boolean flag = m.matches();
 		if(!flag) 
-			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			throw new UserRegistrationException ("Invalid entry of Password!! please re-try!");
 			return flag;
 	}
 
