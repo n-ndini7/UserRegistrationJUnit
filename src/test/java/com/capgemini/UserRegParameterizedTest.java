@@ -1,6 +1,6 @@
 package com.capgemini;
 
-import static org.junit.Assert.*;
+import org.junit.Assert;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -43,8 +43,13 @@ public class UserRegParameterizedTest {
 
 	@Test
 	public void givenEmail_WhenProper_ReturnTrue() {
-		System.out.println("Is email valid? - " + email + " : " + expectedResult);
-		assertEquals(expectedResult, user.EmailCheck(email));
-	}
+		UserRegGradle user = new UserRegGradle();
+		try {
+			boolean flag = user.EmailCheck(this.email);
+			Assert.assertEquals(this.expectedResult,flag);
+		}catch(UserRegistrationException e) {
+			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+		}
+			}
 
 }

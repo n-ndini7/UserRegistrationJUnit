@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,8 +44,13 @@ public class UserRegParameterized {
 
 	@Test
 	public void givenEmail_WhenProper_ReturnTrue() {
-		System.out.println("Is email valid? - " + email + " : " + expectedResult);
-		assertEquals(expectedResult, user.EmailCheck(email));
+		UserRegGradle user = new UserRegGradle();
+		try {
+			boolean flag = user.EmailCheck(this.email);
+			Assert.assertEquals(this.expectedResult, flag);
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+		}
 	}
 
 }
