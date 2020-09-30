@@ -3,33 +3,55 @@ package com.capgemini;
 import java.util.Scanner;
 import java.util.regex.*;
 
-//JUnit tests to validate user entry 
+//Exception handling 
 public class UserRegGradle {
 	public static Scanner sc;
 
-	public boolean FirstNameCheck(String firstName) {
-		String namePattern = "^[A-Z]{1}[a-zA-Z]{2,}";
-		return (firstName.matches(namePattern));
+	public boolean FirstNameCheck(String firstName) throws UserRegistrationException {
+		Pattern p = Pattern.compile("^[A-Z]{1}[a-zA-Z]{2,}");
+		Matcher m = p.matcher(firstName);
+		boolean flag = m.matches();
+		if(!flag) 
+			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			return flag;
 	}
 
-	public boolean LastNameCheck(String lastName) {
-		String namePattern = "^[A-Z]{1}[a-zA-Z]{2,}";
-		return (lastName.matches(namePattern));
+	public boolean LastNameCheck(String lastName) throws UserRegistrationException {
+		Pattern p = Pattern.compile("^[A-Z]{1}[a-zA-Z]{2,}");
+		Matcher m = p.matcher(lastName);
+		//return (lastName.matches(namePattern));
+		boolean flag = m.matches();
+		if(!flag) 
+			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			return flag;
 	}
 
-	public boolean EmailCheck(String email) {
-		String emailPattern = "^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$";
-		return (email.matches(emailPattern));
+	public boolean EmailCheck(String email)throws UserRegistrationException {
+		Pattern p = Pattern.compile("^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$");
+		Matcher m = p.matcher(email);
+	//eturn (email.matches(emailPattern));
+		boolean flag = m.matches();
+		if(!flag) 
+			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			return flag;
 	}
 
-	public boolean MobileCheck(String mobile) {
-		String mobilePattern = "[0-9-]{1,}[ ][1-9]{1}[0-9]{9}";
-		return (mobile.matches(mobilePattern));
+	public boolean MobileCheck(String mobile)throws UserRegistrationException {
+		Pattern p = Pattern.compile("[0-9]{2}[\\s][7-9][0-9]{9}");
+		Matcher m = p.matcher(mobile);
+		boolean flag = m.matches();
+		if(!flag) 
+			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			return flag;
 	}
 
-	public boolean PasswordCheck(String password) {
-		String passwordPattern = "(?=.*[A-Z]+)(?=.*[0-9]+)(?=.*\\W).{8,}$";
-		return password.matches(passwordPattern);
+	public boolean PasswordCheck(String pass )throws UserRegistrationException {
+		Pattern p = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$");
+		Matcher m = p.matcher(pass);
+		boolean flag = m.matches();
+		if(!flag) 
+			throw new UserRegistrationException ("Invalid entry!! please re-try!");
+			return flag;
 	}
 
 	public static void main(String[] args) {
@@ -38,7 +60,7 @@ public class UserRegGradle {
 
 		System.out.println("Welcome to user registration");
 
-		System.out.println("Please enter your first name:");
+	/*System.out.println("Please enter your first name:");
 		String firstName = sc.nextLine();
 		System.out.println("Please enter your last name:");
 		String lastName = sc.nextLine();
@@ -55,7 +77,7 @@ public class UserRegGradle {
 		System.out.println("Valid Mobile number: " + user.MobileCheck(mobile));
 		System.out.println("Valid password: " + user.PasswordCheck(password));
 		// Patterns
-
+*/
 	}
 
 }
