@@ -14,7 +14,7 @@ public class UserRegTest {
 			boolean result = user.FirstNameCheck("Nandini");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of first name!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -25,7 +25,7 @@ public class UserRegTest {
 			boolean result = user.FirstNameCheck("Nan");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of first name !! please re-try!", e.getMessage());
 		}
 	}
 
@@ -37,7 +37,7 @@ public class UserRegTest {
 			boolean result = user.FirstNameCheck("nandini");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of first name !! please re-try!", e.getMessage());
 		}
 	}
 
@@ -49,7 +49,7 @@ public class UserRegTest {
 			boolean result = user.FirstNameCheck("Nandini@@");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of first name !! please re-try!", e.getMessage());
 		}
 	}
 	// Tests for first name
@@ -61,7 +61,7 @@ public class UserRegTest {
 			boolean result = user.LastNameCheck("Gupta");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of last name!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -72,7 +72,7 @@ public class UserRegTest {
 			boolean result = user.LastNameCheck("Gup");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of last name !! please re-try!", e.getMessage());
 		}
 	}
 
@@ -83,7 +83,7 @@ public class UserRegTest {
 			boolean result = user.LastNameCheck("gupta");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of last name!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -94,7 +94,7 @@ public class UserRegTest {
 			boolean result = user.LastNameCheck("Gupta@@");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of last name!! please re-try!", e.getMessage());
 		}
 	}
 	// Tests for last name
@@ -106,7 +106,7 @@ public class UserRegTest {
 			boolean result = user.MobileCheck("91 8312345567");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of mobile no.!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -117,7 +117,7 @@ public class UserRegTest {
 			boolean result = user.MobileCheck("124 8312345567");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of mobile no.!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -129,7 +129,7 @@ public class UserRegTest {
 			boolean result = user.MobileCheck("91 831234@567");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of mobile no.!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -141,7 +141,7 @@ public class UserRegTest {
 			boolean result = user.MobileCheck("91 83123455");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of mobile no.!! please re-try!", e.getMessage());
 		}
 	}
 	// Tests for mobile number
@@ -154,7 +154,7 @@ public class UserRegTest {
 			boolean result = user.EmailCheck("abc@yahoo.com");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Email ID!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -165,7 +165,7 @@ public class UserRegTest {
 			boolean result = user.EmailCheck("abc.100@abc.com.au");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Email ID!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -176,7 +176,7 @@ public class UserRegTest {
 			boolean result = user.EmailCheck("abc@123.c");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Email ID!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -187,7 +187,7 @@ public class UserRegTest {
 			boolean result = user.EmailCheck("abc@gmail.com.aa.in");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Email ID!! please re-try!", e.getMessage());
 		}
 	}
 	// Tests for Email ID
@@ -199,7 +199,7 @@ public class UserRegTest {
 			boolean result = user.PasswordCheck("aBcd123@m");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Password!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -211,7 +211,7 @@ public class UserRegTest {
 			boolean result = user.PasswordCheck("@ABC12345");
 			assertEquals(true, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Password!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -222,7 +222,7 @@ public class UserRegTest {
 			boolean result = user.PasswordCheck("ball@1234");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Password!! please re-try!", e.getMessage());
 		}
 	}
 
@@ -233,7 +233,7 @@ public class UserRegTest {
 			boolean result = user.PasswordCheck("Apple98765");
 			assertEquals(false, result);
 		} catch (UserRegistrationException e) {
-			Assert.assertEquals("Invalid entry!! please re-try!", e.getMessage());
+			Assert.assertEquals("Invalid entry of Password!! please re-try!", e.getMessage());
 		}
 	}
 	// Tests for password
